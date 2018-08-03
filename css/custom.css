@@ -1,0 +1,119 @@
+
+
+.container{
+	margin-top:30px;
+}
+.filter-col{
+	padding-left:10px;
+	padding-right:10px;
+}
+.dropdown .dropdown-toggle {
+	width: 100%;
+	margin-top:4px;
+}
+.nav-link {
+	padding-top: 4px;
+}
+body > .container {
+	padding-top:0px;
+}
+
+.filters {
+	margin-top: 10px;
+}
+.filters a {
+	padding-top: 5px;
+	padding-bottom: 3px;
+	padding-right: 7px;
+}
+.filters a img {
+	margin-right: 4px;
+}
+
+
+.card2 {
+	text-align: center;
+}
+.phone-list {
+	margin-top: 30px;
+}
+.phone-tile{
+	border: 1px solid #eee;
+	padding: 10px;
+}
+.footer {
+	width: initial;
+}
+.phone-description {
+	text-align: center;          
+}
+
+.footer1 {
+  width: 100%;
+  left: 0;
+  background-color: black;
+  padding-bottom:10px;
+}
+.footer-column {
+  line-height: 1.3;
+}
+.footer-column a {
+  display: block;
+}
+.footer-column a.title {
+  font-size: 18px;
+  color: red;
+  margin-top:20px;
+}
+
+.footer-column a.inline {
+  display:inline;
+}
+
+.footer-column a img {
+  margin-top:15px;
+}
+
+
+.footer-column a:link {
+    color: #AAA;
+}
+
+.footer-column a:visited {
+    color: #AAA;
+}
+
+.footer-column a:hover {
+    color: #EEE;
+    text-decoration: underline;
+}
+
+.footer-column a:active {
+    color: #AAA;
+}
+
+.margin-l-10 {
+	margin-left: 10px;
+}
+
+.footer-column a.title:link {
+    color: #FFFFFF;
+}
+
+.footer-column a.title:visited {
+    color: #FFFFFF;
+}
+
+.footer-column a.title:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.footer-column a.title:active {
+    color: #FFFFFF;
+}
+
+
+body {
+  margin-bottom: 0 !important;
+}

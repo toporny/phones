@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <title>vodaphone</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="challenge">
+      <meta name="author" content="Przemyslaw Rzeznik">
+      <link rel="icon" href="images/favicon.ico">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/custom.css">
+      <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+   </head>
+   <body>
+      <header>
+         <!-- Fixed navbar -->
+         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img class="navbar-brand" src="images/vodafone_logo.png" width="30">Vodafone</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Phones list</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Support</a>
+                  </li>
+               </ul>
+               <form class="form-inline mt-2 mt-md-0">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Type model here" aria-label="Type model/manufacturer">
+                  <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+               </form>
+            </div>
+         </nav>
+      </header>
+      <!-- Begin page content -->
+      <main role="main" class="container">
+
+         <!-- start filters -->
+         <div class="row" id="dropdowns-filters">
+           <!-- start manufacturers -->
+<!--             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
+               <span class="dropdown">
+                  <button type="button" class="btn btn-outline-danger dropdown-toggle" data-toggle="dropdown">
+                  All manufacturers
+                  </button>
+                  <ul class="dropdown-menu">
+                     <form>
+                        <div class="margin-l-10 checkbox" >
+                           <label><input type="checkbox"> Apple </label></br>
+                           <label><input type="checkbox"> Alcatel </label></br>
+                           <label><input checked="checked" type="checkbox"> CAT </label></br>
+                           <label><input type="checkbox"> Doro </label></br>
+                           <label><input type="checkbox"> Huawei </label></br>
+                           <label><input type="checkbox"> Mobiwire </label></br>
+                           <label><input type="checkbox"> Nokia </label></br>
+                           <label><input type="checkbox"> Samsung </label></br>
+                           <label><input type="checkbox"> Sony </label></br>
+                           <label><input type="checkbox"> Vodafone </label></br>
+                        </div>
+                     </form>
+                  </ul>
+               </span>
+            </div> -->
+            <!-- end manufacturers -->
+            <!-- start Features -->
+<!--             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
+               <span class="dropdown">
+                  <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown">
+                  All Features
+                  </button>
+                  <ul class="dropdown-menu">
+                     <form>
+                        <div class="margin-l-10 checkbox">
+                           <label><input type="checkbox"> 4G </label></br>
+                           <label><input type="checkbox"> HD Voice </label></br>
+                           <label><input type="checkbox"> Expandable memory&nbsp;</label></br>
+                        </div>
+                     </form>
+                  </ul>
+               </span>
+            </div> -->
+            <!-- end Features -->
+
+            <!-- start Platforms -->
+<!--             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
+               <span class="dropdown">
+                  <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                  All Platforms
+                  </button>
+                  <ul class="dropdown-menu">
+                     <form>
+                        <div class="margin-l-10 checkbox">
+                           <label><input type="checkbox"> Apple </label></br>
+                           <label><input type="checkbox"> Android </label></br>
+                           <label><input type="checkbox"> Windows </label></br>
+                           <label><input type="checkbox"> iOS </label></br>
+                        </div>
+                     </form>
+                  </ul>
+               </span>
+            </div> -->
+            <!-- end Platforms -->
+
+            <!-- start Types -->
+<!--             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
+               <span class="dropdown">
+                  <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
+                  All Types
+                  </button>
+                  <ul class="dropdown-menu">
+                     <form>
+                        <div class="margin-l-10 checkbox">
+                           <label><input type="checkbox"> Smartphones </label></br>
+                           <label><input type="checkbox"> Simple phones </label></br>
+                           <label><input type="checkbox"> Business phones </label></br>
+                        </div>
+                     </form>
+                  </ul>
+               </span>
+            </div> -->
+            <!-- end Types -->
+         </div>
+         <!-- end filters -->
+
+
+         <div class="filters">
+            <a href="#" data-toggle="tooltip" title="remove filter" class="exit-icon badge badge-danger"><img src="images/icon.png">All manufacturers</a>
+            <a href="#" data-toggle="tooltip" title="remove filter" class="exit-icon badge badge-success"><img src="images/icon.png">All features</a>
+            <a href="#" data-toggle="tooltip" title="remove filter" class="exit-icon badge badge-primary"><img src="images/icon.png">All platforms</a>
+            <a href="#" data-toggle="tooltip" title="remove filter" class="exit-icon badge badge-info"><img src="images/icon.png">All types</a>
+         </div>
+         <div class="phone-list">
+            <div class="row">
+               <div class="phone-tile col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="card2">
+                     <div class="front"> 
+                        <img src="images/I712B_FRONT.png">
+                     </div>
+                     <div class="back">
+                        <img src="images/I712B_BACK.png">
+                     </div>
+                  </div>
+                  <div class="phone-description">
+                     <h6>Vodafone Smart first 7</br> (3 colors),  From: €153,</h6>
+                     <type="button" class="btn btn-sm btn-danger">more details...</button>
+                  </div>
+               </div>
+               <div class="phone-tile col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="card2">
+                     <div class="front"> 
+                        <img src="images/SXPXA_FRONT.png">
+                     </div>
+                     <div class="back">
+                        <img src="images/SXPXA_BACK.png">
+                     </div>
+                  </div>
+                  <div class="phone-description">
+                     <h6>Sony Xperia E5</br> (3 colors),  From: €153,</h6>
+                     <type="button" class="btn btn-sm btn-danger">more details...</button>
+                  </div>
+               </div>
+               <div class="phone-tile col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="card2">
+                     <div class="front"> 
+                        <img src="images/I712B_FRONT.png">
+                     </div>
+                     <div class="back">
+                        <img src="images/I712B_BACK.png">
+                     </div>
+                  </div>
+                  <div class="phone-description">
+                     <h6>iPhone 6s Plus 64GB</br> (3 colors),  From: €153,</h6>
+                     <type="button" class="btn btn-sm btn-danger">more details...</button>
+                  </div>
+               </div>
+               <div class="phone-tile col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="card2">
+                     <div class="front"> 
+                        <img src="images/SXPXA_FRONT.png">
+                     </div>
+                     <div class="back">
+                        <img src="images/SXPXA_BACK.png">
+                     </div>
+                  </div>
+                  <div class="phone-description">
+                     <h6>Samsung Galaxy A3 2016</br> (3 colors),  From: €153,</h6>
+                     <type="button" class="btn btn-sm btn-danger">more details...</button>
+                  </div>
+               </div>
+               <div class="phone-tile col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="card2">
+                     <div class="front"> 
+                        <img src="images/SXPXA_FRONT.png">
+                     </div>
+                     <div class="back">
+                        <img src="images/SXPXA_BACK.png">
+                     </div>
+                  </div>
+                  <div class="phone-description">
+                     <h6>Apple iPhone 8 Plus 64GB</br> (3 colors),  From: €153,</h6>
+                     <type="button" class="btn btn-sm btn-danger">more details...</button>
+                  </div>
+               </div>
+               <div class="phone-tile col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <div class="card2">
+                     <div class="front"> 
+                        <img src="images/SXPXA_FRONT.png">
+                     </div>
+                     <div class="back">
+                        <img src="images/SXPXA_BACK.png">
+                     </div>
+                  </div>
+                  <div class="phone-description">
+                     <h6>Vodafone Smart prime 7</br> (3 colors),  From: €153,</h6>
+                     <type="button" class="btn btn-sm btn-danger">more details...</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <footer class="footer1">
+         <div class="container">
+            <div class="row">
+               <div class="footer-column col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <a class="title" href="http://www.vodafone.ie/aboutus/">About Vodafone</a>
+                  <a href="https://n.vodafone.ie/careers.html">Careers</a>
+                  <a href="https://n.vodafone.ie/aboutus/press.html">News &amp; press releases</a>
+                  <a href="https://n.vodafone.ie/aboutus/foundation.html">Vodafone Ireland Foundation</a>
+                  <a href="https://n.vodafone.ie/terms.html">Terms &amp; conditions</a>
+                  <a href="https://n.vodafone.ie/aboutus/company/accessibility.html">Accessibility</a>
+                  <a href="https://n.vodafone.ie/aboutus/privacy-cookies.html">Privacy Policy</a>
+                  <a href="//rugby.vodafone.ie/">Vodafone &amp; IRFU</a>
+                  <a class="link-arrow" href="//www.vodafone.ie/aboutus/">About us</a>
+               </div>
+               <div class="footer-column col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <a class="title" href="http://www.vodafone.ie/support/">Support</a>
+                  <a href="http://deviceguides.vodafone.ie/web/">Help with devices</a>
+                  <a href="https://n.vodafone.ie/support/broadband-landline.html">Home phone &amp; landline support</a>
+                  <a href="https://n.vodafone.ie/support/devices/repairs-replacement-insurance.html#lostorstolen">Lost or stolen phone</a>
+                  <a href="https://n.vodafone.ie/protecting-you.html">Internet security advice</a>
+                  <a class="link-arrow" href="//www.vodafone.ie/support/">All help topics</a>
+               </div>
+               <div class="footer-column col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <a class="title" href="http://shop.vodafone.ie/shop/phones">Most popular brands</a>
+                  <a href="https://n.vodafone.ie/brands/iphone.html">iPhone</a>
+                  <a href="https://n.vodafone.ie/brands/samsung.html">Samsung</a>
+                  <a href="https://n.vodafone.ie/brands/vodafone.html">Vodafone</a>
+                  <a href="https://n.vodafone.ie/brands/sony.html">Sony</a>
+                  <a href="https://n.vodafone.ie/brands/huawei.html">Huawei</a>
+               </div>
+               <div class="footer-column col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <a class="title" href="http://www.vodafone.ie/support/">Support</a>
+                  <a href="http://community.vodafone.ie">Join our Community</a>
+                  <a href="https://n.vodafone.ie/stores.html">Find a store</a>
+                  <a class="inline" href="https://community.vodafone.ie"><img src="images/facebook-lrg.png"></a>
+                  <a class="inline" href="http://twitter.com/VodafoneIreland?utm_campaign=vfcontactustw&amp;utm_medium=twitter&amp;utm_source=onlinejd&amp;utm_content=vfcontactustw"><img src="images/twitter-lrg.png"></a>
+                  <a class="inline" href="http://www.facebook.com/pages/Vodafone-Ireland/39948747919?utm_campaign=vfcontactusfb&amp;utm_medium=facebook&amp;utm_source=onlineteamjd&amp;utm_content=vfcontactusfb"><img src="images/community-lrg.png"></a>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.flip.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
