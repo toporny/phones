@@ -1,38 +1,10 @@
-$("#card").flip({
-	axis: 'y',
-	trigger: 'hover'
-});
-
+ 
 $(".card2").flip({
 	axis: 'y',
 	trigger: 'hover'
 });
 
 
-
-// create dropdown filters
-
-
-
-// 'Apple', 'Alcatel', 'CAT', 'Doro', 'Huawei', 'Mobiwire', 'Nokia', 'Samsung', 'Sony', 'Vodafone'
-// '
-// '4G'
-// 'HD Voice'
-// 'Expandable memory'
- 
-// 'Apple'
-// 'Android'
-// 'Windows'
-// 'iOS'
-//, 'Apple', 'Android', 'Windows', 'iOS'
-
-// 'Smartphones'
-// 'Simple phones'
-// 'Business phones;
-
- 
-
-//createDropdown('Manufacturers', a)
 
 
 function createDropdown(name, arr, color) {
@@ -77,6 +49,9 @@ $('#dropdowns-filters').html (filters);
 
 
 
+function AddRemoveAll() {
+}
+
 // ==============================================================================
 
 function updateFilterBar(colorFilter, id) {
@@ -108,10 +83,10 @@ function updateFilterBar(colorFilter, id) {
 	});
 
 
-	(manufacturers.length > 0) ? $('.btn-outline-danger>span.all').html('') : $('.btn-outline-danger>span.all').html('All');
-	(features.length > 0) ? $('.btn-outline-success>span.all').html('') : $('.btn-outline-success>span.all').html('All');
-	(platforms.length > 0) ? $('.btn-outline-primary>span.all').html('') : $('.btn-outline-primary>span.all').html('All');
-	(types.length > 0) ? $('.btn-outline-info>span.all').html('') : $('.btn-outline-info>span.all').html('All');
+	(manufacturers.length > 0) ? $('span.dropdown .btn-outline-danger>span.all').html('') : $('span.dropdown .btn-outline-danger>span.all').html('All');
+	(features.length > 0) ? $('span.dropdown .btn-outline-success>span.all').html('') : $('span.dropdown .btn-outline-success>span.all').html('All');
+	(platforms.length > 0) ? $('span.dropdown .btn-outline-primary>span.all').html('') : $('span.dropdown .btn-outline-primary>span.all').html('All');
+	(types.length > 0) ? $('span.dropdown .btn-outline-info>span.all').html('') : $('span.dropdown .btn-outline-info>span.all').html('All');
 
  
 	var filtr_str = '';
@@ -148,22 +123,26 @@ function updateFilterBar(colorFilter, id) {
 		switch (kind) {
 			case 'manufacturers':
  				$("input[type=checkbox][value='"+va+"'].checkbox-danger").prop("checked",false);
+ 				l = $("input[type=checkbox].checkbox-danger:checked").length;
+				(l > 0) ? $('span.dropdown .btn-outline-danger>span.all').html('') : $('span.dropdown .btn-outline-danger>span.all').html('All');
 			break;
 			case 'features':
  				$("input[type=checkbox][value='"+va+"'].checkbox-success").prop("checked",false);
+ 				l = $("input[type=checkbox].checkbox-success:checked").length;
+				(l > 0) ? $('span.dropdown .btn-outline-success>span.all').html('') : $('span.dropdown .btn-outline-success>span.all').html('All');
 			break;
 			case 'platforms':
  				$("input[type=checkbox][value='"+va+"'].checkbox-primary").prop("checked",false);
+ 				l = $("input[type=checkbox].checkbox-primary:checked").length;
+				(l > 0) ? $('span.dropdown .btn-outline-primary>span.all').html('') : $('span.dropdown .btn-outline-primary>span.all').html('All');
 			break;
 			case 'types':
  				$("input[type=checkbox][value='"+va+"'].checkbox-info").prop("checked",false);
+ 				l = $("input[type=checkbox].checkbox-info:checked").length;
+				(l > 0) ? $('span.dropdown .btn-outline-info>span.all').html('') : $('span.dropdown .btn-outline-info>span.all').html('All');
 			break;
 		}
-
-
 	});
-
-
 }
  
 

@@ -120,6 +120,9 @@ body > .container {
   padding-top: 3px;
 }
 
+.bootbox .modal-header{
+display: block;
+}
 
 body {
   margin-bottom: 0 !important;
