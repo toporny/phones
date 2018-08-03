@@ -1,5 +1,4 @@
 
-
 .container{
 	margin-top:30px;
 }
@@ -113,7 +112,20 @@ body > .container {
     color: #FFFFFF;
 }
 
+#filters a img {
+  margin-right: 2px;
+}
+
+#filters a {
+  padding-top: 3px;
+}
+
 
 body {
   margin-bottom: 0 !important;
 }
+
+body > .container {
+  padding-top: 0px !important;
+}
+

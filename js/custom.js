@@ -46,9 +46,9 @@ function createDropdown(name, arr, color) {
 	            <div class="margin-l-10 checkbox" >
 	            `;
 
-			for (i =0; i < arr.length; i++) {
-				text += `<label><input class="checkbox-${color}" name="${name}" value="${arr[i]}" type="checkbox"> ${arr[i]}  </label><br>\n`;
-			}
+	for (i =0; i < arr.length; i++) {
+		text += `<label><input class="checkbox-${color}" name="${name}[]" value="${arr[i]}" type="checkbox"> ${arr[i]}  </label><br>\n`;
+	}
 
 	text +=    `</div>
 	         </form>
@@ -70,7 +70,7 @@ arr = ['Apple', 'Android', 'Windows', 'iOS'];
 filters += createDropdown('Platforms', arr, 'primary');
 
 arr = ['Smartphones', 'Simple phones', 'Business phones', 'info'];
-filters += createDropdown('Types', arr);
+filters += createDropdown('Types', arr, 'info');
  
 
 $('#dropdowns-filters').html (filters);
@@ -79,29 +79,117 @@ $('#dropdowns-filters').html (filters);
 
 // ==============================================================================
 
-function updateFilterBar(color, id) {
-	console.log(color, id);
+function updateFilterBar(colorFilter, id) {
+	
+	//<a href="#" class="filter-marker" data-toggle="tooltip" title="remove filter" class="exit-icon badge badge-danger"><img src="images/icon.png">All manufacturers</a>
+	var manufacturers = [];
+	var features = [];
+	var platforms = [];
+	var types = [];
+
+	$("input[name='Manufacturers[]']:checked").each(function ()
+	{
+	    manufacturers.push($(this).val());
+	});
+
+	$("input[name='Features[]']:checked").each(function ()
+	{
+	    features.push($(this).val());
+	});
+
+	$("input[name='Platforms[]']:checked").each(function ()
+	{
+	    platforms.push($(this).val());
+	});
+
+	$("input[name='Types[]']:checked").each(function ()
+	{
+	    types.push($(this).val());
+	});
+
+
+	(manufacturers.length > 0) ? $('.btn-outline-danger>span.all').html('') : $('.btn-outline-danger>span.all').html('All');
+	(features.length > 0) ? $('.btn-outline-success>span.all').html('') : $('.btn-outline-success>span.all').html('All');
+	(platforms.length > 0) ? $('.btn-outline-primary>span.all').html('') : $('.btn-outline-primary>span.all').html('All');
+	(types.length > 0) ? $('.btn-outline-info>span.all').html('') : $('.btn-outline-info>span.all').html('All');
+
+ 
+	var filtr_str = '';
+
+	$.each( manufacturers, function( index, value ){
+		filtr_str += '<a href="#" data-toggle="tooltip" title="remove filter" data-va="'+value+'" data-kind="manufacturers" class="filter-marker exit-icon badge badge-danger"><img src="images/icon.png">'+value+'</a> ';
+	});
+
+	$.each( features, function( index, value ){
+		filtr_str += '<a href="#" data-toggle="tooltip" title="remove filter" data-va="'+value+'" data-kind="features" class="filter-marker exit-icon badge badge-success"><img src="images/icon.png">'+value+'</a> ';
+	});
+
+	$.each( platforms, function( index, value ){
+		filtr_str += '<a href="#" data-toggle="tooltip" title="remove filter" data-va="'+value+'" data-kind="platforms" class="filter-marker exit-icon badge badge-primary"><img src="images/icon.png">'+value+'</a> ';
+	});
+
+	$.each( types, function( index, value ){
+		filtr_str += '<a href="#" data-toggle="tooltip" title="remove filter" data-va="'+value+'" data-kind="types" class="filter-marker exit-icon badge badge-info"><img src="images/icon.png">'+value+'</a> ';
+	});
+
+	$('#filters').html (filtr_str);
+
+
+	$('#filters>a.filter-marker').on('click',  function(e){
+		// i tu potrzeba zeby sie zniknęło
+		var va = $(this).data("va");
+		var kind = $(this).data("kind");
+		$(this).remove();
+		console.log(va);
+		console.log(kind);
+
+		// odswiezyc telefony
+		// usunac z checkboxa
+		switch (kind) {
+			case 'manufacturers':
+ 				$("input[type=checkbox][value='"+va+"'].checkbox-danger").prop("checked",false);
+			break;
+			case 'features':
+ 				$("input[type=checkbox][value='"+va+"'].checkbox-success").prop("checked",false);
+			break;
+			case 'platforms':
+ 				$("input[type=checkbox][value='"+va+"'].checkbox-primary").prop("checked",false);
+			break;
+			case 'types':
+ 				$("input[type=checkbox][value='"+va+"'].checkbox-info").prop("checked",false);
+			break;
+		}
+
+
+	});
+
 
 }
  
 
 
+
+
+
+
 $('.checkbox-danger').change(function (e) {
     var id = $(this).val();
-    updateFilterBar('checkbox-danger', id);
+    updateFilterBar('checkbox-manufacturers', id);
 });
 
 $('.checkbox-success').change(function (e) {
     var id = $(this).val(); 
-    updateFilterBar('checkbox-success', id);
+    updateFilterBar('checkbox-features', id);
 });
 
 $('.checkbox-primary').change(function (e) {
     var id = $(this).val(); 
-    updateFilterBar('checkbox-primary', id);
+    updateFilterBar('checkbox-platforms', id);
 });
 
 $('.checkbox-info').change(function (e) {
     var id = $(this).val(); 
-    updateFilterBar('checkbox-info', id);
+    updateFilterBar('checkbox-types', id);
 });
+
+
