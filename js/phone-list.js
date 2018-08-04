@@ -52,18 +52,109 @@ function show_phones(phones_array) {
 
 }
 
+var dataPhones;
 
 $.getJSON('json/feed.json', function (data) {
-	//console.log(data);
-	$.each(data, function(i, field){
-	    phones_array.push(field);
+	// zrobic buttiny nieaktwyne dopoki dane sie nie załadują
+ 
+	phones_array = [];
+	$.each(data, function(i, field) {
+		phones_array.push(field);
 	});
-	console.log(phones_array);
+	
+	 dataPhones = phones_array.slice();
+
 	show_phones(phones_array);
 });
 
-// Perform other work here ...
- 
- 
 
+
+var oNewArray1;
+var dataPhones1;
+
+function refreshPhones(oNewArray) {
+
+	oNewArray1 = oNewArray;
+	dataPhones1 = dataPhones;
+
+	phones_array = [];
+ 
+	for (i = 0; i < dataPhones.length; i++) {
+
+		var bool_manufacturer = false;
+		var bool_features = false;
+		var bool_platform = false;
+		var bool_types = false;
+
+		if (oNewArray.manufacturers.length > 0)
+			for (j = 0; j < oNewArray.manufacturers.length; j++) { 
+				if (dataPhones[i].manufacturer.indexOf(oNewArray.manufacturers[j]) != -1) {
+					bool_manufacturer = true;
+				}
+			}
+		else {
+			bool_manufacturer = true;
+		}
+
+		// filterfeatures
+		if (oNewArray.features.length > 0) {
+			for (j = 0; j < oNewArray.features.length; j++) {
+				if (oNewArray.features[j] == "Keys") {
+					if (dataPhones[i].filterfeatures.Touchscreen == false) {
+						bool_features = true;
+					}
+				}
+				if (oNewArray.features[j] == "Large Keys") {
+					if (dataPhones[i].filterfeatures["Large keys"] == true) {
+						bool_features = true;
+					}
+				}
+			}
+		}
+		else {
+			bool_features = true;
+		}
+
+
+		// platforms
+		if (oNewArray.platforms.length > 0) {
+			for (j = 0; j < oNewArray.platforms.length; j++) {
+				if (oNewArray.platforms[j] == "Apple") {
+					if (dataPhones[i].manufacturer == "Apple") {
+						bool_platform = true;
+					}
+				}
+				if (oNewArray.platforms[j] == "Android") {
+					if (dataPhones[i].filterfeatures.Android == true) {
+						bool_platform = true;
+					}
+				}
+			}
+		}
+		else {
+			bool_platform = true;
+		}
+
+		// types
+		if (oNewArray.types.length > 0) {
+			for (j = 0; j < oNewArray.types.length; j++) {
+				if (oNewArray.types[j] == "Simple phones") {
+					if (dataPhones[i].categoryfeatures['Simple Phones'] == true) {
+						bool_types = true;
+					}
+				}
+			}
+		}
+		else {
+			bool_types  = true;
+		}
+
+
+		if ( bool_manufacturer && bool_features && bool_platform && bool_types ) {
+			phones_array.push(dataPhones[i]);
+		}
+	}
+	
+	show_phones(phones_array);
+}
 

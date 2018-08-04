@@ -26,16 +26,16 @@ function createDropdown(name, arr, color) {
 
 
 
-arr = ['Apple', 'Alcatel', 'CAT', 'Doro', 'Huawei', 'Mobiwire', 'Nokia', 'Samsung', 'Sony', 'Vodafone'];
+arr = ['Apple', 'Alcatel', 'Doro', 'Huawei', 'Samsung', 'Sony', 'Vodafone'];
 var filters = createDropdown('Manufacturers', arr, 'danger');
 
-arr = ['4G', 'HD Voice', 'Expandable memory'];
+arr = ['Keys', 'Large Keys' ]; //, 'WiFi', 'Memory card'
 filters += createDropdown('Features', arr, 'success');
 
-arr = ['Apple', 'Android', 'Windows', 'iOS'];
+arr = ['Apple', 'Android' ];  // 'iOS'
 filters += createDropdown('Platforms', arr, 'primary');
 
-arr = ['Smartphones', 'Simple phones', 'Business phones', 'info'];
+arr = ['Simple phones' ];  // 'Smartphones', 'Business phones'
 filters += createDropdown('Types', arr, 'info');
  
 
@@ -73,6 +73,8 @@ function updateFilterBar(colorFilter, id) {
 	{
 	    types.push($(this).val());
 	});
+
+    refreshPhones({manufacturers, features, platforms, types });
 
 
 	(manufacturers.length > 0) ? $('span.dropdown .btn-outline-danger>span.all').html('') : $('span.dropdown .btn-outline-danger>span.all').html('All');
@@ -142,6 +144,7 @@ function updateFilterBar(colorFilter, id) {
 
 $('.checkbox-danger').change(function (e) {
     var id = $(this).val();
+    console.log(id);
     updateFilterBar('checkbox-manufacturers', id);
 });
 
