@@ -1,9 +1,3 @@
- 
-$(".card2").flip({
-	axis: 'y',
-	trigger: 'hover'
-});
-
 
 
 
@@ -48,9 +42,7 @@ filters += createDropdown('Types', arr, 'info');
 $('#dropdowns-filters').html (filters);
 
 
-
-function AddRemoveAll() {
-}
+ 
 
 // ==============================================================================
 
@@ -111,15 +103,12 @@ function updateFilterBar(colorFilter, id) {
 
 
 	$('#filters>a.filter-marker').on('click',  function(e){
-		// i tu potrzeba zeby sie zniknęło
+ 
 		var va = $(this).data("va");
 		var kind = $(this).data("kind");
 		$(this).remove();
-		console.log(va);
-		console.log(kind);
 
 		// odswiezyc telefony
-		// usunac z checkboxa
 		switch (kind) {
 			case 'manufacturers':
  				$("input[type=checkbox][value='"+va+"'].checkbox-danger").prop("checked",false);
