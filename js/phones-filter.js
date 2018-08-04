@@ -1,5 +1,8 @@
 
-
+var manufacturers = [];
+var features = [];
+var platforms = [];
+var types = [];
 
 function createDropdown(name, arr, color) {
 	var text = `<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -42,17 +45,12 @@ filters += createDropdown('Types', arr, 'info');
 $('#dropdowns-filters').html (filters);
 
 
- 
 
-// ==============================================================================
-
-function updateFilterBar(colorFilter, id) {
-	
-	//<a href="#" class="filter-marker" data-toggle="tooltip" title="remove filter" class="exit-icon badge badge-danger"><img src="images/icon.png">All manufacturers</a>
-	var manufacturers = [];
-	var features = [];
-	var platforms = [];
-	var types = [];
+function redrawPhones() {
+	manufacturers = [];
+	features = [];
+	platforms = [];
+	types = [];
 
 	$("input[name='Manufacturers[]']:checked").each(function ()
 	{
@@ -75,7 +73,14 @@ function updateFilterBar(colorFilter, id) {
 	});
 
     refreshPhones({manufacturers, features, platforms, types });
+}
+ 
 
+// ==============================================================================
+
+function updateFilterBar(colorFilter, id) {
+	
+	redrawPhones();
 
 	(manufacturers.length > 0) ? $('span.dropdown .btn-outline-danger>span.all').html('') : $('span.dropdown .btn-outline-danger>span.all').html('All');
 	(features.length > 0) ? $('span.dropdown .btn-outline-success>span.all').html('') : $('span.dropdown .btn-outline-success>span.all').html('All');
@@ -110,7 +115,7 @@ function updateFilterBar(colorFilter, id) {
 		var kind = $(this).data("kind");
 		$(this).remove();
 
-		// odswiezyc telefony
+
 		switch (kind) {
 			case 'manufacturers':
  				$("input[type=checkbox][value='"+va+"'].checkbox-danger").prop("checked",false);
@@ -133,6 +138,8 @@ function updateFilterBar(colorFilter, id) {
 				(l > 0) ? $('span.dropdown .btn-outline-info>span.all').html('') : $('span.dropdown .btn-outline-info>span.all').html('All');
 			break;
 		}
+
+		redrawPhones();
 	});
 }
  
