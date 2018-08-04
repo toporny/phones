@@ -22,7 +22,7 @@ function show_phones(phones_array) {
 		}
 
 		a+=`
-			   <div class="phone-tile col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			   <div class="phone-tile" data-id="${i}" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
 			      <div class="card2">
 			         <div class="front"> 
 			            <img width="200" height="340" src="${phones_array[i].imageFront}">
