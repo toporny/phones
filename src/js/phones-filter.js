@@ -1,3 +1,4 @@
+'use strict';
 
 var manufacturers = [];
 var features = [];
@@ -15,7 +16,7 @@ function createDropdown(name, arr, color) {
 	            <div class="margin-l-10 checkbox" >
 	            `;
 
-	for (i =0; i < arr.length; i++) {
+	for (var i =0; i < arr.length; i++) {
 		text += `<label><input class="checkbox-${color}" name="${name}[]" value="${arr[i]}" type="checkbox"> ${arr[i]}  </label><br>\n`;
 	}
 
@@ -29,7 +30,7 @@ function createDropdown(name, arr, color) {
 
 
 
-arr = ['Apple', 'Alcatel', 'Doro', 'Huawei', 'Samsung', 'Sony', 'Vodafone'];
+var arr = ['Apple', 'Alcatel', 'Doro', 'Huawei', 'Samsung', 'Sony', 'Vodafone'];
 var filters = createDropdown('Manufacturers', arr, 'danger');
 
 arr = ['Keys', 'Large Keys' ]; //, 'WiFi', 'Memory card'

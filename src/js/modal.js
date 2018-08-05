@@ -1,3 +1,5 @@
+﻿'use strict';
+
 
 function getColors(ob) {
 	if (typeof ob.colors !== 'undefined') {
@@ -18,9 +20,9 @@ function getPrice(price) {
 }
 
 function getFeatures(features){
-	keys = Object.keys(features);
+	var keys = Object.keys(features);
 	var result = '';
-	for (i=0; i<keys.length; i++) {
+	for (var i=0; i<keys.length; i++) {
 		 console.log(features[keys[i]] );
 		if (features[keys[i]] == true) {
 			result += keys[i]+ ', ';
@@ -33,7 +35,7 @@ function getFeatures(features){
 
 function attach_event() {
 	$('.phone-tile').on('click',  function(){
-		id = $(this).data("id");
+		var id = $(this).data("id");
 		var msg = `
 		    <div class="row">
 		       <div class="col-xl-12 col-lg12 col-md-12 col-sm-12 col-xs-12">

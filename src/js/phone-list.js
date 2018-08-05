@@ -1,19 +1,21 @@
-phones_array = [];
+﻿'use strict';
+
+var phones_array = [];
 
 
 function show_phones(phones_array) {
 
 	var a = '<div class="phone-list"><div class="row">';
 
-	for (i = 0; i < phones_array.length; i++) { 
+	for (var i = 0; i < phones_array.length; i++) { 
 	if (phones_array[i].outOfStock == false ) {
 
-		colors = '';
+		var colors = '';
 		if (typeof phones_array[i].colors !== 'undefined') {
 			colors = `(${phones_array[i].colors.length} colors) `;
 		}
 
-		price = '';
+		var price = '';
 		if (phones_array[i].priceFrom == 0) {
 			price = 'Price: free ';
 		}
@@ -79,7 +81,7 @@ function refreshPhones(oNewArray) {
 
 	phones_array = [];
  
-	for (i = 0; i < dataPhones.length; i++) {
+	for (var i = 0; i < dataPhones.length; i++) {
 
 		var bool_manufacturer = false;
 		var bool_features = false;
@@ -87,7 +89,7 @@ function refreshPhones(oNewArray) {
 		var bool_types = false;
 
 		if (oNewArray.manufacturers.length > 0)
-			for (j = 0; j < oNewArray.manufacturers.length; j++) { 
+			for (var j = 0; j < oNewArray.manufacturers.length; j++) { 
 				if (dataPhones[i].manufacturer.indexOf(oNewArray.manufacturers[j]) != -1) {
 					bool_manufacturer = true;
 				}
@@ -98,7 +100,7 @@ function refreshPhones(oNewArray) {
 
 		// filterfeatures
 		if (oNewArray.features.length > 0) {
-			for (j = 0; j < oNewArray.features.length; j++) {
+			for (var j = 0; j < oNewArray.features.length; j++) {
 				if (oNewArray.features[j] == "Keys") {
 					if (dataPhones[i].filterfeatures.Touchscreen == false) {
 						bool_features = true;
@@ -118,7 +120,7 @@ function refreshPhones(oNewArray) {
 
 		// platforms
 		if (oNewArray.platforms.length > 0) {
-			for (j = 0; j < oNewArray.platforms.length; j++) {
+			for (var j = 0; j < oNewArray.platforms.length; j++) {
 				if (oNewArray.platforms[j] == "Apple") {
 					if (dataPhones[i].manufacturer == "Apple") {
 						bool_platform = true;
@@ -137,7 +139,7 @@ function refreshPhones(oNewArray) {
 
 		// types
 		if (oNewArray.types.length > 0) {
-			for (j = 0; j < oNewArray.types.length; j++) {
+			for (var j = 0; j < oNewArray.types.length; j++) {
 				if (oNewArray.types[j] == "Simple phones") {
 					if (dataPhones[i].categoryfeatures['Simple Phones'] == true) {
 						bool_types = true;
