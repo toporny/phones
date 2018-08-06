@@ -109,6 +109,7 @@ function refreshFilterBar() {
 // filter bar
 function FilterBar(colorFilter, id) {
 	
+    $('#search_model>input').val('');
 	redrawPhones();
 	refreshFilterBar();
 	$('#filters>a.filter-marker').on('click',  function(e){
@@ -151,7 +152,6 @@ function FilterBar(colorFilter, id) {
 // change listeners
 $('.checkbox-danger').change(function (e) {
     var id = $(this).val();
-    console.log(id);
     FilterBar('checkbox-manufacturers', id);
 });
 
