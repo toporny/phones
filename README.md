@@ -11,8 +11,8 @@ File structure:
 - index.html
 
 ### How to build in simple building process
-npm install
-gulp
+- npm install
+- gulp
 
 ## Simple bulding process explanation
 - gulp concatenates all CSS files and makes copy to dist folder
@@ -20,8 +20,8 @@ gulp
 - copy all images and JSON to dist folder
 
 ### How to run
-cd dist
-http-server
+- cd dist
+- http-server
 
 ### Online working versions
 all JS concatenated:
