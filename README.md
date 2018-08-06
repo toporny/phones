@@ -24,7 +24,7 @@ File structure:
 - http-server
 
 ### Online working versions
-all JS concatenated:
+all JS concatenated (with Babel):
 http://alltic.home.pl/vodafone_prod
 
 development version:
