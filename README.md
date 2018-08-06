@@ -30,9 +30,13 @@ http://alltic.home.pl/vodafone_prod
 development version:
 http://alltic.home.pl/vodafone_dev
 
+
 ### For future
 - add SASS compilation formula to bower and start using SASS
 - add js and CSS uglification
-- move everything to Vue.js to better scalability (routing, etc)
+- move everything to React.js to better scalability (routing, etc)
+
+### Scalability
+- Most components (header, filters, footer, checkboxex) in this prototype are separated for HTML and logic - it is easy to add additional modules or move all to modern framework (such as React.js or Vue.js)
 
 
