@@ -12,6 +12,7 @@ function createDropdown(name, arr, color) {
 	      <span class="all">All</span> ${name}
 	      </button>
 	      <ul class="dropdown-menu">
+	         <form>
 	            <div class="margin-l-10 checkbox" >
 	            `;
 
@@ -20,6 +21,7 @@ function createDropdown(name, arr, color) {
 	}
 
 	text +=    `</div>
+	         </form>
 	      </ul>
 	   </span>
 	</div>`;

@@ -92,7 +92,11 @@ body > .container {
 }
 
 .margin-l-10 {
-	margin-left: 10px;
+  margin-left: 10px;
+}
+
+.margin-l-0 {
+  margin-left: 0px;
 }
 
 .footer-column a.title:link {

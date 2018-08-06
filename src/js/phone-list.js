@@ -5,7 +5,7 @@ var phones_array = [];
 // show phone list
 function show_phones(phones_array) {
 
-	var a = '<div class="phone-list"><div class="row">';
+	var a = '<div class="row" class="margin-l-0"> ';
 
 	for (var i = 0; i < phones_array.length; i++) { 
 		if (phones_array[i].outOfStock == false ) {
@@ -41,7 +41,7 @@ function show_phones(phones_array) {
 			\n`
 		}
 	}
-	a += '</div></div>';
+	a += '</div>';
 
 	$('.phone-list').html(a); 
 
