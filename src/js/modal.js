@@ -33,6 +33,10 @@ function attach_event() {
 	$('.phone-tile').on('click',  function(){
 		var product_id = $(this).data("productid");
 		var id = dataIndexes[product_id];
+		console.log('product_id',product_id);
+		console.log('id',id);
+		console.log('phones_array',phones_array);
+		
 		var msg = `
 		    <div class="row">
 		       <div class="col-xl-12 col-lg12 col-md-12 col-sm-12 col-xs-12">

@@ -90,7 +90,7 @@ function refreshPhones(oNewArray) {
 	oNewArray1 = oNewArray;
 	dataPhones1 = dataPhones;
 
-	phones_array = [];
+	var phones_array1 = [];
  
 	for (var i = 0; i < dataPhones.length; i++) {
 
@@ -164,10 +164,10 @@ function refreshPhones(oNewArray) {
 
 
 		if ( bool_manufacturer && bool_features && bool_platform && bool_types ) {
-			phones_array.push(dataPhones[i]);
+			phones_array1.push(dataPhones[i]);
 		}
 	}
 	
-	show_phones(phones_array);
+	show_phones(phones_array1);
 }
 

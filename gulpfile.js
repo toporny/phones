@@ -1,9 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var cleanCSS = require('gulp-clean-css');
-var addsrc = require('gulp-add-src');
 var gulp_concat = require('gulp-concat');
-var gulp_copy = require('gulp-copy');
 var uglify = require('gulp-uglify');
 var gulp_babel = require('gulp-babel');
 
