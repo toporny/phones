@@ -20,6 +20,11 @@ gulp.task('gulp_copy_images', function() {
     .pipe(gulp.dest('./dist/images'));
 });
 
+gulp.task('gulp_copy_json', function() {
+  return gulp.src('./src/json/feed.json')
+    .pipe(gulp.dest('./dist/json'));
+});
+
 
 
 gulp.task('gulp_babel', function() {
@@ -40,4 +45,4 @@ gulp.task('concat_external', function() {
 
 
 
-gulp.task('default', [ 'gulp_copy_images', 'gulp_concat_css', 'concat_external' , 'gulp_babel' ]);
+gulp.task('default', [ 'gulp_copy_images', 'gulp_concat_css', 'concat_external' , 'gulp_babel', 'gulp_copy_json' ]);

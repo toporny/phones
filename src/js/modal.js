@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-
+// getColors()
 function getColors(ob) {
 	if (typeof ob.colors !== 'undefined') {
 		return '<nobr><small><b>Colors</b>: '+ob.colors.toString().replace(/,/g, ", ")+'</small></nobr>';
@@ -10,32 +10,29 @@ function getColors(ob) {
 	}
 }
 
+
+// getPrice()
 function getPrice(price) {
-	if (price == '0') {
-		return "Free";
-	}
-	else {
-		return "From €"+price;
-	}
+	return (price == '0') ? "Free" : "From €" + price;
 }
 
+// getFeatures()
 function getFeatures(features){
 	var keys = Object.keys(features);
 	var result = '';
 	for (var i=0; i<keys.length; i++) {
-		 console.log(features[keys[i]] );
 		if (features[keys[i]] == true) {
 			result += keys[i]+ ', ';
 		}		
 	}
 	return result.slice(0,-2);
-//Object.keys(phones_array[id].filterfeatures).toString().replace(/,/g, ", ")
 }
 
-
+// attach event on .phone-tile
 function attach_event() {
 	$('.phone-tile').on('click',  function(){
-		var id = $(this).data("id");
+		var product_id = $(this).data("productid");
+		var id = dataIndexes[product_id];
 		var msg = `
 		    <div class="row">
 		       <div class="col-xl-12 col-lg12 col-md-12 col-sm-12 col-xs-12">

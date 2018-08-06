@@ -2,29 +2,29 @@
 
 var phones_array = [];
 
-
+// show phone list
 function show_phones(phones_array) {
 
 	var a = '<div class="phone-list"><div class="row">';
 
 	for (var i = 0; i < phones_array.length; i++) { 
-	if (phones_array[i].outOfStock == false ) {
+		if (phones_array[i].outOfStock == false ) {
 
-		var colors = '';
-		if (typeof phones_array[i].colors !== 'undefined') {
-			colors = `(${phones_array[i].colors.length} colors) `;
-		}
+			var colors = '';
+			if (typeof phones_array[i].colors !== 'undefined') {
+				colors = `(${phones_array[i].colors.length} colors) `;
+			}
 
-		var price = '';
-		if (phones_array[i].priceFrom == 0) {
-			price = 'Price: free ';
-		}
-		else {
-			price = `From: €${phones_array[i].priceFrom}`;
-		}
+			var price = '';
+			if (phones_array[i].priceFrom == 0) {
+				price = 'Price: free ';
+			}
+			else {
+				price = `From: €${phones_array[i].priceFrom}`;
+			}
 
-		a+=`
-			   <div class="phone-tile" data-id="${i}" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+			a+=`
+			   <div class="phone-tile" data-productid="${phones_array[i].productid}" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
 			      <div class="card2">
 			         <div class="front"> 
 			            <img width="200" height="340" src="${phones_array[i].imageFront}">
@@ -55,16 +55,27 @@ function show_phones(phones_array) {
 }
 
 var dataPhones;
+var dataIndexes = [];
+
+$.ajaxSetup({
+  "error":function() { 
+		bootbox.alert({
+			message: "Problem with getting data.",
+			size: 'small'
+		});
+    }
+});
 
 $.getJSON('json/feed.json', function (data) {
-	// zrobic buttiny nieaktwyne dopoki dane sie nie załadują
  
 	phones_array = [];
+	var count = 0;
 	$.each(data, function(i, field) {
 		phones_array.push(field);
+		dataIndexes[field.productid] = count++;
 	});
 	
-	 dataPhones = phones_array.slice();
+	dataPhones = phones_array.slice();
 
 	show_phones(phones_array);
 });

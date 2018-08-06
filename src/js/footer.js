@@ -1,5 +1,6 @@
 'use strict';
 
+// template
 var footer1 = `
  <div class="container">
     <div class="row">

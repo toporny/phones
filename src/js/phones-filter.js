@@ -12,7 +12,6 @@ function createDropdown(name, arr, color) {
 	      <span class="all">All</span> ${name}
 	      </button>
 	      <ul class="dropdown-menu">
-	         <form>
 	            <div class="margin-l-10 checkbox" >
 	            `;
 
@@ -21,7 +20,6 @@ function createDropdown(name, arr, color) {
 	}
 
 	text +=    `</div>
-	         </form>
 	      </ul>
 	   </span>
 	</div>`;
@@ -33,20 +31,19 @@ function createDropdown(name, arr, color) {
 var arr = ['Apple', 'Alcatel', 'Doro', 'Huawei', 'Samsung', 'Sony', 'Vodafone'];
 var filters = createDropdown('Manufacturers', arr, 'danger');
 
-arr = ['Keys', 'Large Keys' ]; //, 'WiFi', 'Memory card'
+arr = ['Keys', 'Large Keys' ]; 
 filters += createDropdown('Features', arr, 'success');
 
-arr = ['Apple', 'Android' ];  // 'iOS'
+arr = ['Apple', 'Android' ]; 
 filters += createDropdown('Platforms', arr, 'primary');
 
-arr = ['Simple phones' ];  // 'Smartphones', 'Business phones'
+arr = ['Simple phones' ]; 
 filters += createDropdown('Types', arr, 'info');
  
-
 $('#dropdowns-filters').html (filters);
 
 
-
+// redraw phones
 function redrawPhones() {
 	manufacturers = [];
 	features = [];
@@ -77,12 +74,8 @@ function redrawPhones() {
 }
  
 
-// ==============================================================================
-
-function updateFilterBar(colorFilter, id) {
-	
-	redrawPhones();
-
+// refresh (mostly remove) filter bar
+function refreshFilterBar() {
 	(manufacturers.length > 0) ? $('span.dropdown .btn-outline-danger>span.all').html('') : $('span.dropdown .btn-outline-danger>span.all').html('All');
 	(features.length > 0) ? $('span.dropdown .btn-outline-success>span.all').html('') : $('span.dropdown .btn-outline-success>span.all').html('All');
 	(platforms.length > 0) ? $('span.dropdown .btn-outline-primary>span.all').html('') : $('span.dropdown .btn-outline-primary>span.all').html('All');
@@ -108,12 +101,19 @@ function updateFilterBar(colorFilter, id) {
 	});
 
 	$('#filters').html (filtr_str);
+}
 
 
+// filter bar
+function FilterBar(colorFilter, id) {
+	
+	redrawPhones();
+	refreshFilterBar();
 	$('#filters>a.filter-marker').on('click',  function(e){
  
 		var va = $(this).data("va");
 		var kind = $(this).data("kind");
+		var l;
 		$(this).remove();
 
 
@@ -146,29 +146,26 @@ function updateFilterBar(colorFilter, id) {
  
 
 
-
-
-
-
+// change listeners
 $('.checkbox-danger').change(function (e) {
     var id = $(this).val();
     console.log(id);
-    updateFilterBar('checkbox-manufacturers', id);
+    FilterBar('checkbox-manufacturers', id);
 });
 
 $('.checkbox-success').change(function (e) {
     var id = $(this).val(); 
-    updateFilterBar('checkbox-features', id);
+    FilterBar('checkbox-features', id);
 });
 
 $('.checkbox-primary').change(function (e) {
     var id = $(this).val(); 
-    updateFilterBar('checkbox-platforms', id);
+    FilterBar('checkbox-platforms', id);
 });
 
 $('.checkbox-info').change(function (e) {
     var id = $(this).val(); 
-    updateFilterBar('checkbox-types', id);
+    FilterBar('checkbox-types', id);
 });
 
 
