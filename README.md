@@ -2,8 +2,8 @@
 Technologies:
 Javascript, jQuery, and few ES6 instructions + babel to keep compalibility with vanilla JS.
 
-Filter structure:
-- css (simple CSS files no reason to make SASS this timme)
+File structure:
+- css (simple CSS files - no reason to make SASS this time)
 - images 
 - js (custom js for this project)
 - js_ext (js from external providers)
