@@ -14,7 +14,7 @@ File structure:
 - npm install
 - gulp
 
-## Simple bulding process explanation
+### Simple bulding process explanation
 - gulp concatenates all CSS files and makes copy to dist folder
 - makes similar operations with JS and lauch babel plugin to keep compatibility with vanillaJS
 - copy all images and JSON to dist folder
