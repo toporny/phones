@@ -31,7 +31,8 @@ development version:
 http://alltic.home.pl/vodafone_dev
 
 ### For future
-- add js and CSS uglification to bower
-- move it to Vue.js to better scalability
+- add SASS compilation formula to bower and start using SASS
+- add js and CSS uglification
+- move everything to Vue.js to better scalability (routing, etc)
 
 
