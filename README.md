@@ -24,11 +24,7 @@ File structure:
 - http-server
 
 ### Online working versions
-all JS concatenated (with Babel):
-http://alltic.home.pl/vodafone_prod
-
-development version:
-http://alltic.home.pl/vodafone_dev
+http://example2.techduinn.com/
 
 ### Scalability
 - Most components (header, filters, footer, checkboxex) in this prototype are separated for HTML and logic - it is easy to add additional modules or move all to modern framework (such as React.js or Vue.js)
